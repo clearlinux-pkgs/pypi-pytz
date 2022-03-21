@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x01FA998FBAC6374A (stub@ubuntu.com)
 #
 Name     : pypi-pytz
-Version  : 2021.3
-Release  : 92
-URL      : https://files.pythonhosted.org/packages/e3/8e/1cde9d002f48a940b9d9d38820aaf444b229450c0854bdf15305ce4a3d1a/pytz-2021.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/e3/8e/1cde9d002f48a940b9d9d38820aaf444b229450c0854bdf15305ce4a3d1a/pytz-2021.3.tar.gz
-Source1  : https://files.pythonhosted.org/packages/e3/8e/1cde9d002f48a940b9d9d38820aaf444b229450c0854bdf15305ce4a3d1a/pytz-2021.3.tar.gz.asc
+Version  : 2022.1
+Release  : 93
+URL      : https://files.pythonhosted.org/packages/2f/5f/a0f653311adff905bbcaa6d3dfaf97edcf4d26138393c6ccd37a484851fb/pytz-2022.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/2f/5f/a0f653311adff905bbcaa6d3dfaf97edcf4d26138393c6ccd37a484851fb/pytz-2022.1.tar.gz
+Source1  : https://files.pythonhosted.org/packages/2f/5f/a0f653311adff905bbcaa6d3dfaf97edcf4d26138393c6ccd37a484851fb/pytz-2022.1.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
@@ -17,11 +17,8 @@ Requires: pypi-pytz-license = %{version}-%{release}
 Requires: pypi-pytz-python = %{version}-%{release}
 Requires: pypi-pytz-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-Provides: pytz
-Provides: pytz-python
-Provides: pytz-python3
-BuildRequires : pytest
-BuildRequires : pytz
+BuildRequires : pypi(pytz)
+BuildRequires : pypi-pytest
 
 %description
 ============================================
@@ -54,15 +51,15 @@ python3 components for the pypi-pytz package.
 
 
 %prep
-%setup -q -n pytz-2021.3
-cd %{_builddir}/pytz-2021.3
+%setup -q -n pytz-2022.1
+cd %{_builddir}/pytz-2022.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641485912
+export SOURCE_DATE_EPOCH=1647894800
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -80,7 +77,7 @@ pytest || :
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-pytz
-cp %{_builddir}/pytz-2021.3/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pytz/a2641684130f5e32505fdc2a92ad836f0a13200a
+cp %{_builddir}/pytz-2022.1/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pytz/a2641684130f5e32505fdc2a92ad836f0a13200a
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
