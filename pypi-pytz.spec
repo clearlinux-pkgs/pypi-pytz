@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x01FA998FBAC6374A (stub@ubuntu.com)
 #
 Name     : pypi-pytz
-Version  : 2022.2.1
-Release  : 100
-URL      : https://files.pythonhosted.org/packages/24/0c/401283bb1499768e33ddd2e1a35817c775405c1f047a9dc088a29ce2ea5d/pytz-2022.2.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/24/0c/401283bb1499768e33ddd2e1a35817c775405c1f047a9dc088a29ce2ea5d/pytz-2022.2.1.tar.gz
-Source1  : https://files.pythonhosted.org/packages/24/0c/401283bb1499768e33ddd2e1a35817c775405c1f047a9dc088a29ce2ea5d/pytz-2022.2.1.tar.gz.asc
+Version  : 2022.4
+Release  : 101
+URL      : https://files.pythonhosted.org/packages/31/da/2d48d3499b59c7f3c5d5e1c79fcee5537c320c8ab7b7a0cd2db578bc34b3/pytz-2022.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/31/da/2d48d3499b59c7f3c5d5e1c79fcee5537c320c8ab7b7a0cd2db578bc34b3/pytz-2022.4.tar.gz
+Source1  : https://files.pythonhosted.org/packages/31/da/2d48d3499b59c7f3c5d5e1c79fcee5537c320c8ab7b7a0cd2db578bc34b3/pytz-2022.4.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
@@ -51,10 +51,10 @@ python3 components for the pypi-pytz package.
 
 
 %prep
-%setup -q -n pytz-2022.2.1
-cd %{_builddir}/pytz-2022.2.1
+%setup -q -n pytz-2022.4
+cd %{_builddir}/pytz-2022.4
 pushd ..
-cp -a pytz-2022.2.1 buildavx2
+cp -a pytz-2022.4 buildavx2
 popd
 
 %build
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1660517622
+export SOURCE_DATE_EPOCH=1664807622
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -91,7 +91,7 @@ pytest || :
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-pytz
-cp %{_builddir}/pytz-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pytz/a2641684130f5e32505fdc2a92ad836f0a13200a
+cp %{_builddir}/pytz-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pytz/a2641684130f5e32505fdc2a92ad836f0a13200a || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
