@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x01FA998FBAC6374A (stub@ubuntu.com)
 #
 Name     : pypi-pytz
-Version  : 2022.4
-Release  : 101
-URL      : https://files.pythonhosted.org/packages/31/da/2d48d3499b59c7f3c5d5e1c79fcee5537c320c8ab7b7a0cd2db578bc34b3/pytz-2022.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/31/da/2d48d3499b59c7f3c5d5e1c79fcee5537c320c8ab7b7a0cd2db578bc34b3/pytz-2022.4.tar.gz
-Source1  : https://files.pythonhosted.org/packages/31/da/2d48d3499b59c7f3c5d5e1c79fcee5537c320c8ab7b7a0cd2db578bc34b3/pytz-2022.4.tar.gz.asc
+Version  : 2022.5
+Release  : 102
+URL      : https://files.pythonhosted.org/packages/fe/dd/182cc5ed8e64a0d6d6c34fd27391041d542270000825410d294bd6902207/pytz-2022.5.tar.gz
+Source0  : https://files.pythonhosted.org/packages/fe/dd/182cc5ed8e64a0d6d6c34fd27391041d542270000825410d294bd6902207/pytz-2022.5.tar.gz
+Source1  : https://files.pythonhosted.org/packages/fe/dd/182cc5ed8e64a0d6d6c34fd27391041d542270000825410d294bd6902207/pytz-2022.5.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
@@ -51,10 +51,10 @@ python3 components for the pypi-pytz package.
 
 
 %prep
-%setup -q -n pytz-2022.4
-cd %{_builddir}/pytz-2022.4
+%setup -q -n pytz-2022.5
+cd %{_builddir}/pytz-2022.5
 pushd ..
-cp -a pytz-2022.4 buildavx2
+cp -a pytz-2022.5 buildavx2
 popd
 
 %build
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1664807622
+export SOURCE_DATE_EPOCH=1666136387
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
