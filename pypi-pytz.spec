@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x01FA998FBAC6374A (stub@ubuntu.com)
 #
 Name     : pypi-pytz
-Version  : 2022.5
-Release  : 104
-URL      : https://files.pythonhosted.org/packages/fe/dd/182cc5ed8e64a0d6d6c34fd27391041d542270000825410d294bd6902207/pytz-2022.5.tar.gz
-Source0  : https://files.pythonhosted.org/packages/fe/dd/182cc5ed8e64a0d6d6c34fd27391041d542270000825410d294bd6902207/pytz-2022.5.tar.gz
-Source1  : https://files.pythonhosted.org/packages/fe/dd/182cc5ed8e64a0d6d6c34fd27391041d542270000825410d294bd6902207/pytz-2022.5.tar.gz.asc
+Version  : 2022.6
+Release  : 105
+URL      : https://files.pythonhosted.org/packages/76/63/1be349ff0a44e4795d9712cc0b2d806f5e063d4d34631b71b832fac715a8/pytz-2022.6.tar.gz
+Source0  : https://files.pythonhosted.org/packages/76/63/1be349ff0a44e4795d9712cc0b2d806f5e063d4d34631b71b832fac715a8/pytz-2022.6.tar.gz
+Source1  : https://files.pythonhosted.org/packages/76/63/1be349ff0a44e4795d9712cc0b2d806f5e063d4d34631b71b832fac715a8/pytz-2022.6.tar.gz.asc
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
@@ -17,7 +17,6 @@ Requires: pypi-pytz-license = %{version}-%{release}
 Requires: pypi-pytz-python = %{version}-%{release}
 Requires: pypi-pytz-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(pytz)
 BuildRequires : pypi-pytest
 
 %description
@@ -51,10 +50,10 @@ python3 components for the pypi-pytz package.
 
 
 %prep
-%setup -q -n pytz-2022.5
-cd %{_builddir}/pytz-2022.5
+%setup -q -n pytz-2022.6
+cd %{_builddir}/pytz-2022.6
 pushd ..
-cp -a pytz-2022.5 buildavx2
+cp -a pytz-2022.6 buildavx2
 popd
 
 %build
@@ -62,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1666136387
+export SOURCE_DATE_EPOCH=1667325961
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$FFLAGS -fno-lto "
@@ -85,13 +84,14 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
+export PYTHONPATH=%{buildroot}$(python -c "import sys; print(sys.path[-1])")
 pytest || :
 
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-pytz
-cp %{_builddir}/pytz-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pytz/a2641684130f5e32505fdc2a92ad836f0a13200a || :
+cp %{_builddir}/pytz-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-pytz/a2641684130f5e32505fdc2a92ad836f0a13200a
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
