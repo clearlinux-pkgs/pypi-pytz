@@ -5,7 +5,7 @@
 #
 Name     : pypi-pytz
 Version  : 2023.3.post1
-Release  : 112
+Release  : 113
 URL      : https://files.pythonhosted.org/packages/69/4f/7bf883f12ad496ecc9514cd9e267b29a68b3e9629661a2bbc24f80eff168/pytz-2023.3.post1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/69/4f/7bf883f12ad496ecc9514cd9e267b29a68b3e9629661a2bbc24f80eff168/pytz-2023.3.post1.tar.gz
 Summary  : World timezone definitions, modern and historical
