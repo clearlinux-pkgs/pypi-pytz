@@ -6,10 +6,10 @@
 # autospec commit: fae1327
 #
 Name     : pypi-pytz
-Version  : 2023.4
-Release  : 115
-URL      : https://files.pythonhosted.org/packages/ae/fd/c5bafe60236bc2a464452f916b6a1806257109c8954d6a7d19e5d4fb012f/pytz-2023.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/ae/fd/c5bafe60236bc2a464452f916b6a1806257109c8954d6a7d19e5d4fb012f/pytz-2023.4.tar.gz
+Version  : 2024.1
+Release  : 116
+URL      : https://files.pythonhosted.org/packages/90/26/9f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738/pytz-2024.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/90/26/9f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738/pytz-2024.1.tar.gz
 Summary  : World timezone definitions, modern and historical
 Group    : Development/Tools
 License  : MIT
@@ -23,6 +23,7 @@ BuildRequires : pypi-pytest
 %define debug_package %{nil}
 
 %description
+pytz - World Timezone Definitions for Python
 ============================================
 
 %package license
@@ -53,10 +54,10 @@ python3 components for the pypi-pytz package.
 
 
 %prep
-%setup -q -n pytz-2023.4
-cd %{_builddir}/pytz-2023.4
+%setup -q -n pytz-2024.1
+cd %{_builddir}/pytz-2024.1
 pushd ..
-cp -a pytz-2023.4 buildavx2
+cp -a pytz-2024.1 buildavx2
 popd
 
 %build
@@ -64,7 +65,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1706546051
+export SOURCE_DATE_EPOCH=1706893253
 export GCC_IGNORE_WERROR=1
 CLEAR_INTERMEDIATE_CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CLEAR_INTERMEDIATE_FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -fdebug-types-section -femit-struct-debug-baseonly -fno-lto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
