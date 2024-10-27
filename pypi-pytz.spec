@@ -7,7 +7,7 @@
 #
 Name     : pypi-pytz
 Version  : 2024.2
-Release  : 117
+Release  : 118
 URL      : https://files.pythonhosted.org/packages/3a/31/3c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3f/pytz-2024.2.tar.gz
 Source0  : https://files.pythonhosted.org/packages/3a/31/3c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3f/pytz-2024.2.tar.gz
 Summary  : World timezone definitions, modern and historical
