@@ -1,5 +1,5 @@
 PKG_NAME := pypi-pytz
-URL = https://files.pythonhosted.org/packages/3a/31/3c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3f/pytz-2024.2.tar.gz
+URL = https://files.pythonhosted.org/packages/5f/57/df1c9157c8d5a05117e455d66fd7cf6dbc46974f832b1058ed4856785d8a/pytz-2025.1.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
